@@ -40,6 +40,7 @@ class _Base(pollsters.BaseComputePollster):
         metadata = copy.copy(vnic_data)
         resource_metadata = dict(zip(metadata._fields, metadata))
         resource_metadata['instance_id'] = instance.id
+        resource_metadata['display_name'] = instance.name
         resource_metadata['instance_type'] = (instance.flavor['id'] if
                                               instance.flavor else None)
 
